@@ -32,12 +32,8 @@ while True:
         continue
     frame=cv2.resize(frame,(1020,600))
     results=model(frame)
-    for index,row in results.pandas().xyxy[0].iterrows():
-        x1=int(row[0])
-        y1=int(row[1])
-        x2=int(row[2])
-        y2=int(row[3])
-        cv2.rectangle(frame,(x1,y1),(x2,y2),(0,0,255),2)
+    results.pandas().xyxy[0]
+       
         
     
     cv2.imshow("FRAME",frame)
